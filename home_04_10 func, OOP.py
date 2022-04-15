@@ -19,6 +19,36 @@ def rand_nums(num_elems, min_elem, max_elem):
 print(rand_nums(5, 1, 20))
 
 
+# Hometask_13_5
+# Преобразуйте задачу с покупкой торта из экзамена 2 в функцию.
+
+choice = input("Какой торт Вы хотели бы приобрести: ")
+question = input("Что Вы хотели бы уточнить (цена, количество, описание, купить): ")
+if question == "купить":
+    weight = int(input("Сколько грамм торта Вам положить: "))
+
+def def_confectionery(choice, question):
+
+
+    confectionery = {"наполеон": ["крем заварной, слоёное тесто - средне-сладкий", 5.0, 800],
+                     "медовик": ["крем сметанный, тесто песочное -  очень сладкий", 4.5, 1200],
+                     "киевский": ["ореховый слой, тесто песочное -  самый вкусный торт", 15.0, 1500]}
+
+
+    if question == "описание":
+        return print("Торт ", choice, "состоит из ", confectionery[choice][0])
+    elif question == "цена":
+        return print("Торт", choice, "стоит",  confectionery[choice][1], "рублей")
+    elif question == "количество":
+        return print("Торт", choice, "осталось ", confectionery[choice][-1], "грамм")
+    elif question == "купить":
+
+        return print("К оплате ", (weight * confectionery[choice][1] * 0.01), " рублей")
+        return print("Торта ", choice, " осталось ", confectionery[choice][-1], "грамм" )
+
+# def_confectionery("наполеон", "описание")
+def_confectionery(choice, question)
+
 
 # Hometask_13_6
 # Напишите функцию, вычисляющую значение факториала числа N. Используйте рекурсию
